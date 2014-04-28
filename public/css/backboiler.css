@@ -165,7 +165,7 @@ label {
   margin-bottom: 10px;
 }
 .contact_small:hover {
-  border: solid 1px #f60;
+  border: solid 1px blue;
 }
 .contact_small img {
   float: left;
