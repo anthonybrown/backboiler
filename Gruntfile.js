@@ -243,18 +243,31 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('init:dev', ['clean', 'bower', 'browserify:vendor']);
+  grunt.registerTask('init:dev'
+    , ['clean', 'bower', 'browserify:vendor']);
 
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'copy:dev']);
-  grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'cssmin', 'uglify', 'copy:prod']);
+  grunt.registerTask('build:dev'
+    , ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'copy:dev']);
 
-  grunt.registerTask('heroku', ['init:dev', 'build:dev']);
+  grunt.registerTask('build:prod'
+    , ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'cssmin'
+    , 'uglify', 'copy:prod']);
 
-  grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
-  grunt.registerTask('test:server', ['simplemocha:server']);
+  grunt.registerTask('heroku'
+    , ['init:dev', 'build:dev']);
 
-  grunt.registerTask('test:client', ['karma:test']);
-  grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
+  grunt.registerTask('server'
+    , ['build:dev', 'concurrent:dev']);
 
-  grunt.registerTask('test', ['test:server', 'test:client']);
+  grunt.registerTask('test:server'
+    , ['simplemocha:server']);
+
+  grunt.registerTask('test:client'
+    , ['karma:test']);
+
+  grunt.registerTask('tdd'
+    , ['karma:watcher:start', 'concurrent:test']);
+
+  grunt.registerTask('test'
+    , ['test:server', 'test:client']);
 };
