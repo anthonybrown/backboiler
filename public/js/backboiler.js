@@ -15369,7 +15369,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class='add_contact'>\n    <label for='name_first'>First Name:</label> <input type='text' id='name_first' /><br/>\n    <label for='name_last'>Last Name:</label> <input type=\"text\" id='name_last' /><br/>\n    <label for='email'>Email:</label> <input type='text' id='email' /><br/>\n    <label for='phone'>Phone:</label> <input type=\"text\" id='phone' /><br/>\n    <br/>\n    <a href='#' class='save-button'>Save Contact</a> | <a href='#'><< Back</a>\n</div>\n";
+  return "<div class='add_contact'>\n  <label for='name_first'>First Name:</label>\n  <input type='text' id='name_first' /><br/>\n  <label for='name_last'>Last Name:</label>\n  <input type=\"text\" id='name_last' /><br/>\n  <label for='email'>Email:</label>\n  <input type='text' id='email' /><br/>\n  <label for='phone'>Phone:</label>\n  <input type=\"text\" id='phone' /><br/>\n    <br/>\n    <a href='#' class='save-button'>Save Contact</a> | <a href='#'>Back</a>\n</div>\n";
   });
 
 },{"hbsfy/runtime":16}],11:[function(require,module,exports){
@@ -15397,7 +15397,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack2 = helpers.phone) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.phone; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + "<br/><br/>\n\n</div>\n\n<a href='#' class='back'><< Back</a> | <a href='#' class='delete'>Delete Contact</a>\n";
+    + "<br/><br/>\n\n</div>\n\n<a href='#' class='back'>Back</a> | <a href='#' class='delete'>Delete Contact</a>\n";
   return buffer;
   });
 
